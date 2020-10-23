@@ -1,9 +1,9 @@
 const express = require('express')
-const app = express()
-const port = 3000
-
 const fs = require("fs")
 const path = require("path")
+const uuid = require("uuid")
+const app = express()
+const port = 3000
 
 
 
@@ -39,26 +39,45 @@ app.post("/api/notes", function(req, res){
   fs.readFile(path.join(__dirname, './db/db.json'), (err, data)  => { 
 
     if (err){
-      return err
+      throw err
     }
 
     const newNote =  JSON.parse(data)
     const newNote2 = req.body
+    newNote2.id = uuid.v4() 
     newNote.push(newNote2)
 
     const finalNewNote = JSON.stringify(newNote)
-    fs.writeFile(__dirname, "./db/db.json"), finalNewNote, (err) => {
+    fs.writeFile(path.join(__dirname, "./db/db.json"), finalNewNote, (err) => {
       if (err){
         throw err
       }
-    }
+    })
     res.json(newNote2)
 
   })
 
 })
 
-app.delete("/api/notes/:id")
+app.delete("/api/notes/:id" ,function(req, res){
+  const uniqueID =  req.params.id
+  fs.readFile(path.join(__dirname,'','./db/db.json') ,function(err, data){
+    if (err){
+      throw err
+    }
+    const notes = JSON.parse(data)
+    const noteDelete = notes.filter(
+      (noteObj) => noteObj.id !== uniqueID
+    );
+
+    fs.writeFile("./db/db.json", JSON.stringify(noteDelete), function (err, data){
+      if (err){
+        throw err
+      }
+    })
+
+  })
+})
 
 //listeners
 
