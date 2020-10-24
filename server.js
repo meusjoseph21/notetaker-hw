@@ -41,7 +41,7 @@ app.post("/api/notes", function (req, res) {
     const newNote = JSON.parse(data);
     console.log(newNote);
     const newNote2 = req.body;
-    newNote2.id = uuid.v4();
+    newNote2.id = uuid.v1(); //unique ID
     newNote.push(newNote2);
 
     const finalNewNote = JSON.stringify(newNote);
