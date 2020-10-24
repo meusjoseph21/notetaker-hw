@@ -47,7 +47,7 @@
 
   Heroku Live Application: https://fierce-retreat-44894.herokuapp.com/
 
-  GitHub Repository: 
+  GitHub Repository: https://github.com/meusjoseph21/notetaker-hw
 
 
   ## Example Pictures
