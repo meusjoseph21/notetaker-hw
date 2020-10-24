@@ -52,5 +52,5 @@
 
   ## Example Pictures
 
-  <img src = "./public/assets/images/example.jpg">
+  <img src = "./public/assets/images/example.jpg" alt = "example"> 
 
