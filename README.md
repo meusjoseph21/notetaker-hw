@@ -45,12 +45,12 @@
 
   More of my work can be found at [meusjoseph21](https://github/com/meusjoseph21)
 
-  Heroku Live Application: 
+  Heroku Live Application: https://fierce-retreat-44894.herokuapp.com/
 
   GitHub Repository: 
 
 
   ## Example Pictures
 
-  <img src = "./public/assets/images/example.jpg">
+  
 
