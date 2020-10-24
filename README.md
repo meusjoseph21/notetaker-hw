@@ -21,11 +21,11 @@
 
   ## Installation
 
-  To install necessary dependencies, run the following command: undefined
+  To install necessary dependencies, run the following command: npm install
 
   ## Usage
 
-  undefined
+  follow live application link or run nodemon 
 
   ## Contributing 
   Joseph Meus
